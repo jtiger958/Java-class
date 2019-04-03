@@ -7,5 +7,7 @@ public class AutoTest {
             System.out.println(friendList.getFriend(i));
         }
 
+        System.out.println(friendList);
+
     }
 }

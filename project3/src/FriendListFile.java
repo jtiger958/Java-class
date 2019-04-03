@@ -1,8 +1,9 @@
 import java.io.*;
 
-public class FriendListFile {
+public class FriendListFile extends ListFile{
     private FriendList friendList = new FriendList();
 
+    @Override
     public FriendList readFileToList(String fileName){
         try {
             File file = new File(fileName);
