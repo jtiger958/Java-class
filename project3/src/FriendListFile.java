@@ -38,8 +38,13 @@ public class FriendListFile {
         if (userInfo[0].substring(0,2).equals("//"))
             return false;
 
-        if (userInfo.length != 5) {
+        if (userInfo.length < 5) {
             System.out.println("Not enough information in line. Skip the input line");
+            return false;
+        }
+
+        if (userInfo.length > 5){
+            System.out.println("too many information in line. Skip the input line");
             return false;
         }
 

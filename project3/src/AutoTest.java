@@ -3,6 +3,9 @@ public class AutoTest {
         FriendListFile friendListFile  = new FriendListFile();
         FriendList friendList = friendListFile.readFileToList("friendlist-norm.data");
 
-        System.out.println(friendList.getFriend(1));
+        for(int i = 0; i < friendList.numFriends(); i++){
+            System.out.println(friendList.getFriend(i));
+        }
+
     }
 }
