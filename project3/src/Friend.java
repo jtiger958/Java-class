@@ -47,6 +47,4 @@ public class Friend {
                 ", profilePicture='" + profilePicture + '\'' +
                 '}';
     }
-
-
 }
