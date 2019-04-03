@@ -7,15 +7,16 @@ public class FriendList {
         this.friends = new Friend[maxFriend];
     }
 
-    public int getNumFriends() {
+    public int numFriends() {
         return numFriends;
     }
 
     public Friend getFriend(int i) {
         return friends[i];
     }
-    public FriendList setFriend(int num, String name, int group, String email, String phone, String profilePicture){
-        friends[num] = new Friend(name, group, email, phone, profilePicture);
+    public FriendList setFriend(int num, String name, int group, String phone, String email, String profilePicture){
+        friends[num] = new Friend(name, group, phone, email, profilePicture);
+        numFriends++;
         return this;
     }
 }

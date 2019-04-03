@@ -5,7 +5,7 @@ public class Friend {
     private String phone;
     private String profilePicture;
 
-    Friend(String name, int group, String email, String phone, String profilePicture){
+    Friend(String name, int group, String phone, String email, String profilePicture){
         this.name = name;
         this.group = group;
         this.email = email;
@@ -39,7 +39,7 @@ public class Friend {
 
     @Override
     public String toString() {
-        return "Friend{" +
+        return "Friend {" +
                 "name='" + name + '\'' +
                 ", group=" + group +
                 ", email='" + email + '\'' +
