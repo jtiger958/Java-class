@@ -2,14 +2,14 @@ public class Friend {
     private String name;
     private int group;
     private String email;
-    private String phone;
+    private String phoneNumber;
     private String profilePicture;
 
-    Friend(String name, int group, String phone, String email, String profilePicture){
+    Friend(String name, int group, String phoneNumber, String email, String profilePicture){
         this.name = name;
         this.group = group;
         this.email = email;
-        this.phone = phone;
+        this.phoneNumber = phoneNumber;
         this.profilePicture = profilePicture;
     }
 
@@ -25,8 +25,8 @@ public class Friend {
         return email;
     }
 
-    public String getPhone() {
-        return phone;
+    public String getPhoneNumber() {
+        return phoneNumber;
     }
 
     public String getProfilePicture() {
@@ -43,7 +43,7 @@ public class Friend {
                 "name='" + name + '\'' +
                 ", group=" + group +
                 ", email='" + email + '\'' +
-                ", phone='" + phone + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
                 ", profilePicture='" + profilePicture + '\'' +
                 '}';
     }
