@@ -36,7 +36,7 @@ public class FriendListFile extends ListFile{
         Friend tempFriend;
         String tempName;
 
-        if (userInfo[0].substring(0,2).equals("//"))
+        if (userInfo[0].startsWith("//"))
             return false;
 
         if (userInfo.length < 5) {
