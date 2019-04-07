@@ -1,21 +1,21 @@
 import java.util.Arrays;
 
-public class FriendList extends ObjectList<Friend> {
-    public FriendList() {
+class FriendList extends ObjectList<Friend> {
+    FriendList() {
         super(100);
     }
-    public FriendList(int maxNum) {
+    FriendList(int maxNum) {
         super(maxNum);
     }
 
-    public int numFriends() {
+    int numFriends() {
         return super.numElement();
     }
 
-    public Friend getFriend(int index) {
+    Friend getFriend(int index) {
         return super.getElement(index);
     }
-    public void setFriend(int num, String name, int group, String phoneNumber, String email, String profilePicture){
+    void setFriend(int num, String name, int group, String phoneNumber, String email, String profilePicture){
         super.setElement(num, new Friend(name, group, phoneNumber, email, profilePicture));
     }
 

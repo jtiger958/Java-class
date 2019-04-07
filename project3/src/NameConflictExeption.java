@@ -1,4 +1,4 @@
-public class NameConflictExeption extends Exception {
+class NameConflictExeption extends Exception {
     NameConflictExeption(){
         super("Name Conflict");
     }

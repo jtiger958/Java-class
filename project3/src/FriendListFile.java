@@ -9,7 +9,7 @@ public class FriendListFile extends ListFile{
             File file = new File(fileName);
             FileReader fileReader = new FileReader(file);
             BufferedReader bufferedReader = new BufferedReader(fileReader);
-            String line = "";
+            String line;
             String[] userInfo;
             for (int i = 0; (line = bufferedReader.readLine()) != null; i++){
                     userInfo = line.replaceAll(" ", "").split(":");
@@ -19,19 +19,13 @@ public class FriendListFile extends ListFile{
                     }
                     friendList.setFriend(i, userInfo[0], Integer.parseInt(userInfo[1]), userInfo[2], userInfo[3], userInfo[4]);
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        } catch (NameConflictExeption nameConflictExeption) {
-            nameConflictExeption.printStackTrace();
-        } catch (IllegalInformationException e) {
+        } catch (NameConflictExeption | IOException e) {
             e.printStackTrace();
         }
         return friendList;
     }
 
-    private boolean isRightInformation(String[] userInfo) throws NameConflictExeption, IllegalInformationException {
+    private boolean isRightInformation(String[] userInfo) throws NameConflictExeption {
         int numOfFriend = friendList.numFriends();
         Friend tempFriend;
         String tempName;
