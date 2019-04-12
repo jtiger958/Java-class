@@ -15,15 +15,17 @@ class FriendList extends ObjectList<Friend> {
     Friend getFriend(int index) {
         return super.getElement(index);
     }
+
     void setFriend(int num, String name, int group, String phoneNumber, String email, String profilePicture){
         super.setElement(num, new Friend(name, group, phoneNumber, email, profilePicture));
     }
 
     @Override
     public String toString() {
-        return "FriendList{" +
-                "numElement=" + numElement +
-                ", elements=" + Arrays.toString(elements) +
-                '}';
+        String str = "";
+        for(int i = 0; i < numFriends(); i++){
+            str += getFriend(i) + "\n";
+        }
+        return str;
     }
 }

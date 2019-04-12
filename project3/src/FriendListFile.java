@@ -1,4 +1,5 @@
 import java.io.*;
+import java.util.regex.Pattern;
 
 public class FriendListFile extends ListFile{
     private FriendList friendList = new FriendList();
@@ -12,39 +13,47 @@ public class FriendListFile extends ListFile{
             String line;
             String[] userInfo;
             for (int i = 0; (line = bufferedReader.readLine()) != null; i++){
-                    userInfo = line.replaceAll(" ", "").split(":");
-                    if(!isRightInformation(userInfo)) {
-                        i--;
-                        continue;
-                    }
+                line = line.replaceAll(" ", "");
+                if(!isRightInformation(line)) {
+                    i--;
+                    continue;
+                }
+                userInfo = line.split(":");
+                try {
                     friendList.setFriend(i, userInfo[0], Integer.parseInt(userInfo[1]), userInfo[2], userInfo[3], userInfo[4]);
+                }catch (ArrayIndexOutOfBoundsException e){
+                    friendList.setFriend(i, userInfo[0], Integer.parseInt(userInfo[1]), userInfo[2], userInfo[3], null);
+                }
             }
-        } catch (NameConflictExeption | IOException e) {
-            e.printStackTrace();
+        } catch (NameConflictExeption e) {
+            System.out.println("Name Conflict");
+        } catch (IOException e){
+            System.out.println("Unknown File");
         }
         return friendList;
     }
 
-    private boolean isRightInformation(String[] userInfo) throws NameConflictExeption {
+    private boolean isRightInformation(String line) throws NameConflictExeption {
         int numOfFriend = friendList.numFriends();
         Friend tempFriend;
         String tempName;
+        String[] userInfo = line.split(":");
 
         if (userInfo[0].startsWith("//"))
             return false;
 
-        if (userInfo.length < 5) {
-            System.out.println("Not enough information in line. Skip the input line");
+        if (userInfo.length < 5 && !line.endsWith(":")) {
+            System.out.println("Irregular input line   ; Skip the input line : " + line);
             return false;
         }
 
         if (userInfo.length > 5){
-            System.out.println("too many information in line. Skip the input line");
+            System.out.println("Irregular input line   ; Skip the input line : " + line);
             return false;
         }
 
         if (userInfo[3].indexOf('@') == -1){
-            System.out.println("Illegal email address. Skip the input line");
+            System.out.println("Illegal email address ; Skip the input line : " + line);
             return false;
         }
 
@@ -56,10 +65,9 @@ public class FriendListFile extends ListFile{
             }
         }
 
-        try {
-            Integer.parseInt(userInfo[1]);
-        } catch (Exception e){
-            System.out.println("Illegal value. Skip the input line");
+        if(!userInfo[1].matches( "^[0-9]*$")){
+            System.out.println("Illegal value -- " + userInfo[1] + "Skip the input line : "
+                    + String.join(":", userInfo));
             return false;
         }
 
