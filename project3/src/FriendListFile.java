@@ -66,7 +66,7 @@ public class FriendListFile extends ListFile{
         }
 
         if(!userInfo[1].matches( "^[0-9]*$")){
-            System.out.println("Illegal value -- " + userInfo[1] + "Skip the input line : "
+            System.out.println("Illegal value --  ; " + userInfo[1] + "Skip the input line : "
                     + String.join(":", userInfo));
             return false;
         }
