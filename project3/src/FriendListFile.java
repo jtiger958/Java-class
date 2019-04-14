@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class FriendListFile extends ListFile{
+public class FriendListFile extends ObjectListFile{
     private FriendList friendList = new FriendList();
 
     @Override
