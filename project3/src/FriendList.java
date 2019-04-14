@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 class FriendList extends ObjectList<Friend> {
     FriendList() {
         super(100);

@@ -1,5 +1,4 @@
 import java.io.*;
-import java.util.regex.Pattern;
 
 public class FriendListFile extends ListFile{
     private FriendList friendList = new FriendList();

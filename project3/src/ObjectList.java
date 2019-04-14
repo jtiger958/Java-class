@@ -1,6 +1,6 @@
 class ObjectList<T> {
-    int numElement = 0;
-    T[] elements;
+    private int numElement = 0;
+    private T[] elements;
 
     ObjectList(int maxElement) {
         this.elements = (T[]) new Object[maxElement];

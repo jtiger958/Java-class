@@ -1,4 +1,4 @@
-public class Friend {
+class Friend {
     private String name;
     private int group;
     private String email;
@@ -13,27 +13,27 @@ public class Friend {
         this.profilePicture = profilePicture;
     }
 
-    public String getName() {
+    String getName() {
         return name;
     }
 
-    public int getGroup() {
+    int getGroup() {
         return group;
     }
 
-    public String getEmail() {
+    String getEmail() {
         return email;
     }
 
-    public String getPhoneNumber() {
+    String getPhoneNumber() {
         return phoneNumber;
     }
 
-    public String getProfilePicture() {
+    String getProfilePicture() {
         return profilePicture;
     }
 
-    public void print(){
+    void print(){
         System.out.println(this.toString());
     }
 
