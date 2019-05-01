@@ -11,6 +11,8 @@ public class GenericStack {
     }
 
     Object pop() {
-        return this.element[top--];
+        Object data = this.element[top];
+        this.element[top--] = null;
+        return data;
     }
 }

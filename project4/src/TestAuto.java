@@ -1,6 +1,6 @@
 public class TestAuto {
     public static void main(String[] args){
-        ParaStack<Integer> stack = new ParaStack<>();
+        ParaStackNoLimit<Integer> stack = new ParaStackNoLimit<>();
         for(int i = 0; i < 10; i++) {
             stack.push(new Integer(i));
         }
