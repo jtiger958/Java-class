@@ -6,10 +6,9 @@ class ParaStack<T> {
         return top == -1;
     }
 
-    void push(T element){
+    void push(T element) throws StackFullException {
         if(this.element.length <= top + 1){
-            System.out.println("stack is full");
-            return;
+            throw new StackFullException("ParaStack");
         }
         this.element[++top] = element;
     }

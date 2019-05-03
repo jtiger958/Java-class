@@ -1,4 +1,4 @@
-public class GenericStack {
+class GenericStack {
     private Object[] element = new Object[10];
     private int top = -1;
 
@@ -6,10 +6,9 @@ public class GenericStack {
         return top == -1;
     }
 
-    void push(Object element){
+    void push(Object element) throws StackFullException {
         if (this.element.length <= top + 1){
-            System.out.println("stack is full");
-            return;
+            throw new StackFullException("GenericStack");
         }
         this.element[++top] = element;
     }
