@@ -51,6 +51,9 @@ public class TestAuto {
         while(!paraStackNoLimit_string.isEmpty()){
             System.out.println(paraStackNoLimit_string.pop());
         }
+        paraStackNoLimit.pop();
+
+        paraStackNoLimit.top
 
     }
 }
