@@ -1,9 +1,10 @@
-import aiel.friendlist.Layout.FriendListFrame;
+import aiel.friendlist.Layout.AddFriendList.AddFriendFrame;
+import aiel.friendlist.Layout.FriendListFrame.FriendListFrame;
 
 public class AutoTest {
     public static void main(String[] args) {
-        FriendListFrame friendListFrame = new FriendListFrame();
-        friendListFrame.pack();
-        friendListFrame.setVisible(true);
+        FriendListFrame friendListFrame = new FriendListFrame("friendlist-norm.data");
+        AddFriendFrame addFriendFrame = new AddFriendFrame();
+
     }
 }

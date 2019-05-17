@@ -2,10 +2,9 @@ package aiel.friendlist.DataUtil;
 
 import java.io.*;
 
-public class FriendListFile extends ObjectListFile{
+public class FriendListFile{
     private FriendList friendList = new FriendList();
 
-    @Override
     public FriendList readFileToList(String fileName){
         try {
             File file = new File(fileName);
@@ -13,17 +12,17 @@ public class FriendListFile extends ObjectListFile{
             BufferedReader bufferedReader = new BufferedReader(fileReader);
             String line;
             String[] userInfo;
-            for (int i = 0; (line = bufferedReader.readLine()) != null; i++){
+            while ((line = bufferedReader.readLine()) != null){
                 line = line.replaceAll(" ", "");
                 if(!isRightInformation(line)) {
-                    i--;
                     continue;
                 }
                 userInfo = line.split(":");
                 try {
-                    friendList.setFriend(i, userInfo[0], Integer.parseInt(userInfo[1]), userInfo[2], userInfo[3], userInfo[4]);
+                    friendList.addFriend(userInfo[0], Integer.parseInt(userInfo[1]), userInfo[2], userInfo[3], userInfo[4]);
                 }catch (ArrayIndexOutOfBoundsException e){
-                    friendList.setFriend(i, userInfo[0], Integer.parseInt(userInfo[1]), userInfo[2], userInfo[3], null);
+//                    friendList.setFriend(userInfo[0], Integer.parseInt(userInfo[1]), userInfo[2], userInfo[3], null);
+                    friendList.addFriend(userInfo[0], Integer.parseInt(userInfo[1]), userInfo[2], userInfo[3], "");
                 }
             }
         } catch (NameConflictExeption e) {
@@ -32,6 +31,17 @@ public class FriendListFile extends ObjectListFile{
             System.out.println("Unknown File");
         }
         return friendList;
+    }
+
+    public void writeFriendFile(String filename, FriendList friendList) {
+        try {
+            File file = new File(filename);
+            BufferedWriter bufferedWriter = new BufferedWriter(new FileWriter(file));
+            bufferedWriter.write(friendList.toString());
+            bufferedWriter.close();
+        } catch (IOException e){
+            System.out.println("Unknown FIle");
+        }
     }
 
     private boolean isRightInformation(String line) throws NameConflictExeption {
