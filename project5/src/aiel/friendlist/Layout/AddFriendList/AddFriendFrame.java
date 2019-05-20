@@ -28,6 +28,9 @@ public class AddFriendFrame extends JFrame {
                 System.out.println("doneBtn is clicked");
                 isBtnclicked = true;
                 friendinfo = addFriendContentPanel.getFriendAddInfoPanel().getFriendInfo();
+
+                if(!friendinfo.getEmail().contains("@"))
+                    return;
                 dispose();
             }
         });

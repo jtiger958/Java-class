@@ -19,7 +19,6 @@ public class FriendListFrame extends JFrame {
 
         FriendListFile friendListFile  = new FriendListFile();
         FriendList friendList = friendListFile.readFileToList(filename);
-
         friendContentPanel = new FriendContentPanel(friendList);
         settingBtnPannel = new SettingBtnPannel();
 
@@ -87,11 +86,11 @@ public class FriendListFrame extends JFrame {
                     friendInfoPanel = friendContentPanel.getFriendListPanel().getFriendInfoPanel(i);
                     if(friendInfoPanel.isChecked()) {
                         friendList.deleteFriend(i);
-                        friendContentPanel.resetFriendListPanel(friendList);
-                        validate();
                         break;
                     }
                 }
+                friendContentPanel.resetFriendListPanel(friendList);
+                validate();
             }
         });
 
@@ -106,11 +105,11 @@ public class FriendListFrame extends JFrame {
                     friendInfoPanel = friendContentPanel.getFriendListPanel().getFriendInfoPanel(i);
                     if (friendInfoPanel.isChecked()) {
                         friendList.modifyFriend(friendList.getFriend(i), friendInfoPanel.getFriend());
-                        friendContentPanel.resetFriendListPanel(friendList);
-                        validate();
                         break;
                     }
                 }
+                friendContentPanel.resetFriendListPanel(friendList);
+                validate();
             }
         });
 
