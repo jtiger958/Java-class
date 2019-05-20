@@ -20,19 +20,16 @@ public class AddFriendFrame extends JFrame {
         add(addFriendContentPanel, BorderLayout.CENTER);
         add(doneBtn, BorderLayout.EAST);
 
-        doneBtn.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("doneBtn is clicked");
-                isDoneBtnClicked = true;
-                friendInfo = addFriendContentPanel.getFriendAddInfoPanel().getFriendInfo();
+        doneBtn.addActionListener(e -> {
+            System.out.println("doneBtn is clicked");
+            isDoneBtnClicked = true;
+            friendInfo = addFriendContentPanel.getFriendAddInfoPanel().getFriendInfo();
 
-                if(!friendInfo.getEmail().contains("@")) {
-                    System.out.println("Illegal email format");
-                    return;
-                }
-                dispose();
+            if(!friendInfo.getEmail().contains("@")) {
+                System.out.println("Illegal email format");
+                return;
             }
+            dispose();
         });
 
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);

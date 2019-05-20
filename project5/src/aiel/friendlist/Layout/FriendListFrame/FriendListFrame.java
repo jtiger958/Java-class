@@ -28,104 +28,92 @@ public class FriendListFrame extends JFrame {
 
 
 
-        settingBtnPannel.getAddBtn().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("addBtn is clicked");
-                AddFriendFrame addFriendFrame = new AddFriendFrame();
-                addFriendFrame.addWindowListener(new WindowListener() {
-                    @Override
-                    public void windowOpened(WindowEvent e) {
+        settingBtnPannel.getAddBtn().addActionListener(e -> {
+            System.out.println("addBtn is clicked");
+            AddFriendFrame addFriendFrame = new AddFriendFrame();
+            addFriendFrame.addWindowListener(new WindowListener() {
+                @Override
+                public void windowOpened(WindowEvent e) {
 
-                    }
+                }
 
-                    @Override
-                    public void windowClosing(WindowEvent e) {
+                @Override
+                public void windowClosing(WindowEvent e) {
 
-                    }
+                }
 
-                    @Override
-                    public void windowClosed(WindowEvent e) {
+                @Override
+                public void windowClosed(WindowEvent e) {
 
-                    }
+                }
 
-                    @Override
-                    public void windowIconified(WindowEvent e) {
+                @Override
+                public void windowIconified(WindowEvent e) {
 
-                    }
+                }
 
-                    @Override
-                    public void windowDeiconified(WindowEvent e) {
+                @Override
+                public void windowDeiconified(WindowEvent e) {
 
-                    }
+                }
 
-                    @Override
-                    public void windowActivated(WindowEvent e) {
+                @Override
+                public void windowActivated(WindowEvent e) {
 
-                    }
+                }
 
-                    @Override
-                    public void windowDeactivated(WindowEvent e) {
-                        if (addFriendFrame.isDoneBtnClicked()) {
-                            Friend friend = addFriendFrame.getFriendInfo();
-                            if(friendList.searchFriend(friend.getName()) == null){
-                                System.out.println("Name Conflict");
-                                return;
-                            }
-                            friendList.addFriend(friend);
-                            friendContentPanel.resetFriendListPanel(friendList);
-
-                            validate();
+                @Override
+                public void windowDeactivated(WindowEvent e) {
+                    if (addFriendFrame.isDoneBtnClicked()) {
+                        Friend friend = addFriendFrame.getFriendInfo();
+                        if(friendList.searchFriend(friend.getName()) == null){
+                            System.out.println("Name Conflict");
+                            return;
                         }
-                    }
-                });
-            }
-        });
+                        friendList.addFriend(friend);
+                        friendContentPanel.resetFriendListPanel(friendList);
 
-        settingBtnPannel.getDeleteBtn().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("deleteBtn is clicked");
-                int numFriendInfoPanel = friendContentPanel.getFriendListPanel().getNumFriendInfoPanel();
-                FriendInfoPanel friendInfoPanel;
-
-                for(int i = 0; i < numFriendInfoPanel; i++) {
-                    friendInfoPanel = friendContentPanel.getFriendListPanel().getFriendInfoPanel(i);
-                    if(friendInfoPanel.isChecked()) {
-                        friendList.deleteFriend(i);
-                        break;
+                        validate();
                     }
                 }
-                friendContentPanel.resetFriendListPanel(friendList);
-                validate();
-            }
+            });
         });
 
-        settingBtnPannel.getModifyBtn().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("modifyBtn is clicked");
-                int numFriendInfoPanel = friendContentPanel.getFriendListPanel().getNumFriendInfoPanel();
-                FriendInfoPanel friendInfoPanel;
+        settingBtnPannel.getDeleteBtn().addActionListener(e -> {
+            System.out.println("deleteBtn is clicked");
+            int numFriendInfoPanel = friendContentPanel.getFriendListPanel().getNumFriendInfoPanel();
+            FriendInfoPanel friendInfoPanel;
 
-                for(int i = 0; i < numFriendInfoPanel; i++) {
-                    friendInfoPanel = friendContentPanel.getFriendListPanel().getFriendInfoPanel(i);
-                    if (friendInfoPanel.isChecked()) {
-                        friendList.modifyFriend(friendList.getFriend(i), friendInfoPanel.getFriend());
-                        break;
-                    }
+            for(int i = 0; i < numFriendInfoPanel; i++) {
+                friendInfoPanel = friendContentPanel.getFriendListPanel().getFriendInfoPanel(i);
+                if(friendInfoPanel.isChecked()) {
+                    friendList.deleteFriend(i);
+                    break;
                 }
-                friendContentPanel.resetFriendListPanel(friendList);
-                validate();
             }
+            friendContentPanel.resetFriendListPanel(friendList);
+            validate();
         });
 
-        settingBtnPannel.getSaveFileBtn().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                System.out.println("saveFileBtn is clicked");
-                friendListFile.writeFriendFile(filename, friendList);
+        settingBtnPannel.getModifyBtn().addActionListener(e -> {
+            System.out.println("modifyBtn is clicked");
+            int numFriendInfoPanel = friendContentPanel.getFriendListPanel().getNumFriendInfoPanel();
+            FriendInfoPanel friendInfoPanel;
+
+            for(int i = 0; i < numFriendInfoPanel; i++) {
+                friendInfoPanel = friendContentPanel.getFriendListPanel().getFriendInfoPanel(i);
+                if (friendInfoPanel.isChecked()) {
+                    friendList.modifyFriend(friendList.getFriend(i), friendInfoPanel.getFriend());
+                    break;
+                }
             }
+            friendContentPanel.resetFriendListPanel(friendList);
+            validate();
+        });
+
+        settingBtnPannel.getSaveFileBtn().addActionListener(e -> {
+            System.out.println("saveFileBtn is clicked");
+            friendListFile.writeFriendFile(filename, friendList);
         });
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
