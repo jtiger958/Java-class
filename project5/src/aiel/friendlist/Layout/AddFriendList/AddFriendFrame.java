@@ -1,7 +1,6 @@
 package aiel.friendlist.Layout.AddFriendList;
 
 import aiel.friendlist.DataUtil.Friend;
-import aiel.friendlist.Layout.FriendListFrame.FriendListFrame;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,13 +9,12 @@ import java.awt.event.ActionListener;
 
 public class AddFriendFrame extends JFrame {
     private AddFriendContentPanel addFriendContentPanel;
-    private JButton doneBtn;
-    Friend friendinfo;
-    private boolean isBtnclicked = false;
-    FriendListFrame friendListFrame;
+    private Friend friendInfo;
+    private boolean isDoneBtnClicked = false;
+
     public AddFriendFrame(){
         addFriendContentPanel = new AddFriendContentPanel();
-        doneBtn = new JButton("Done");
+        JButton doneBtn = new JButton("Done");
 
         setLayout(new BorderLayout());
         add(addFriendContentPanel, BorderLayout.CENTER);
@@ -26,11 +24,13 @@ public class AddFriendFrame extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("doneBtn is clicked");
-                isBtnclicked = true;
-                friendinfo = addFriendContentPanel.getFriendAddInfoPanel().getFriendInfo();
+                isDoneBtnClicked = true;
+                friendInfo = addFriendContentPanel.getFriendAddInfoPanel().getFriendInfo();
 
-                if(!friendinfo.getEmail().contains("@"))
+                if(!friendInfo.getEmail().contains("@")) {
+                    System.out.println("Illegal email format");
                     return;
+                }
                 dispose();
             }
         });
@@ -40,11 +40,11 @@ public class AddFriendFrame extends JFrame {
         setVisible(true);
     }
 
-    public boolean isBtnclicked(){
-        return this.isBtnclicked;
+    public boolean isDoneBtnClicked(){
+        return this.isDoneBtnClicked;
     }
 
-    public Friend getFriendinfo(){
-        return friendinfo;
+    public Friend getFriendInfo(){
+        return friendInfo;
     }
 }

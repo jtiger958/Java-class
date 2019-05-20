@@ -1,5 +1,6 @@
 package aiel.friendlist.Layout.FriendListFrame;
 
+import aiel.friendlist.DataUtil.Friend;
 import aiel.friendlist.DataUtil.FriendList;
 import aiel.friendlist.DataUtil.FriendListFile;
 import aiel.friendlist.Layout.AddFriendList.AddFriendFrame;
@@ -12,8 +13,8 @@ import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
 
 public class FriendListFrame extends JFrame {
-    FriendContentPanel friendContentPanel;
-    SettingBtnPannel settingBtnPannel;
+    private FriendContentPanel friendContentPanel;
+    private SettingBtnPannel settingBtnPannel;
     public FriendListFrame(String filename){
         setLayout(new BorderLayout());
 
@@ -27,7 +28,7 @@ public class FriendListFrame extends JFrame {
 
 
 
-        settingBtnPannel.addBtn.addActionListener(new ActionListener() {
+        settingBtnPannel.getAddBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("addBtn is clicked");
@@ -65,9 +66,15 @@ public class FriendListFrame extends JFrame {
 
                     @Override
                     public void windowDeactivated(WindowEvent e) {
-                        if (addFriendFrame.isBtnclicked()) {
-                            friendList.addFriend(addFriendFrame.getFriendinfo());
+                        if (addFriendFrame.isDoneBtnClicked()) {
+                            Friend friend = addFriendFrame.getFriendInfo();
+                            if(friendList.searchFriend(friend.getName()) == null){
+                                System.out.println("Name Conflict");
+                                return;
+                            }
+                            friendList.addFriend(friend);
                             friendContentPanel.resetFriendListPanel(friendList);
+
                             validate();
                         }
                     }
@@ -75,7 +82,7 @@ public class FriendListFrame extends JFrame {
             }
         });
 
-        settingBtnPannel.deleteBtn.addActionListener(new ActionListener() {
+        settingBtnPannel.getDeleteBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("deleteBtn is clicked");
@@ -94,7 +101,7 @@ public class FriendListFrame extends JFrame {
             }
         });
 
-        settingBtnPannel.modifyBtn.addActionListener(new ActionListener() {
+        settingBtnPannel.getModifyBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("modifyBtn is clicked");
@@ -113,7 +120,7 @@ public class FriendListFrame extends JFrame {
             }
         });
 
-        settingBtnPannel.saveFileBtn.addActionListener(new ActionListener() {
+        settingBtnPannel.getSaveFileBtn().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 System.out.println("saveFileBtn is clicked");

@@ -33,12 +33,21 @@ public class FriendList extends ObjectList<Friend> {
         super.modifyElement(srcFriend, desFriend);
     }
 
+    public Friend searchFriend(String name) {
+        for(int i = 0; i < numFriends(); i++){
+            if (name.equals(getFriend(i).getName())){
+                return getFriend(i);
+            }
+        }
+        return null;
+    }
+
     @Override
     public String toString() {
-        String str = "";
+        StringBuilder str = new StringBuilder();
         for(int i = 0; i < numFriends(); i++){
-            str += getFriend(i) + "\n";
+            str.append(getFriend(i)).append("\n");
         }
-        return str;
+        return str.toString();
     }
 }
