@@ -1,18 +1,18 @@
-package aiel.friendlist.Layout.AddFriendList;
+package aiel.friendlist.Layout.AddFriendList.ContentPanel;
 
 import javax.swing.*;
 import java.awt.*;
 
-class AddFriendContentPanel extends JPanel {
+public class AddFriendContentPanel extends JPanel {
     private AddFriendInfoPanel addFriendInfoPanel = new AddFriendInfoPanel();
-    AddFriendContentPanel(){
+    public AddFriendContentPanel(){
         setLayout(new BorderLayout());
 
         add(new AddFriendInfoHeadPanel(), BorderLayout.NORTH);
         add(addFriendInfoPanel, BorderLayout.CENTER);
     }
 
-    AddFriendInfoPanel getFriendAddInfoPanel() {
+    public AddFriendInfoPanel getFriendAddInfoPanel() {
         return addFriendInfoPanel;
     }
 }

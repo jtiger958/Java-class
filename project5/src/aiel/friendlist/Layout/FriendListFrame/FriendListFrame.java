@@ -1,122 +1,44 @@
 package aiel.friendlist.Layout.FriendListFrame;
 
-import aiel.friendlist.DataUtil.Friend;
+import aiel.friendlist.ActionListener.AddBtnListener;
+import aiel.friendlist.ActionListener.DeleteBtnActionListener;
+import aiel.friendlist.ActionListener.ModifyBtnListener;
+import aiel.friendlist.ActionListener.ShowBtnNameActionListener;
 import aiel.friendlist.DataUtil.FriendList;
 import aiel.friendlist.DataUtil.FriendListFile;
-import aiel.friendlist.Layout.AddFriendList.AddFriendFrame;
+import aiel.friendlist.Layout.FriendListFrame.ButtonPanel.SettingBanPanel;
+import aiel.friendlist.Layout.FriendListFrame.ContentPanel.FriendContentPanel;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
 
 public class FriendListFrame extends JFrame {
-    private FriendContentPanel friendContentPanel;
-    private SettingBtnPannel settingBtnPannel;
     public FriendListFrame(String filename){
         setLayout(new BorderLayout());
 
         FriendListFile friendListFile  = new FriendListFile();
         FriendList friendList = friendListFile.readFileToList(filename);
-        friendContentPanel = new FriendContentPanel(friendList);
-        settingBtnPannel = new SettingBtnPannel();
+        FriendContentPanel friendContentPanel = new FriendContentPanel(friendList);
+        SettingBanPanel settingBtnPannel = new SettingBanPanel();
 
         add(friendContentPanel, BorderLayout.CENTER);
         add(settingBtnPannel, BorderLayout.EAST);
 
 
+        settingBtnPannel.getAddBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBtnPannel.getAddBtn().addActionListener(new AddBtnListener(friendContentPanel, friendList));
 
-        settingBtnPannel.getAddBtn().addActionListener(e -> {
-            System.out.println("addBtn is clicked");
-            AddFriendFrame addFriendFrame = new AddFriendFrame();
-            addFriendFrame.addWindowListener(new WindowListener() {
-                @Override
-                public void windowOpened(WindowEvent e) {
+        settingBtnPannel.getDeleteBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBtnPannel.getDeleteBtn().addActionListener(new DeleteBtnActionListener(friendContentPanel, friendList));
 
-                }
+        settingBtnPannel.getModifyBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBtnPannel.getModifyBtn().addActionListener(new ModifyBtnListener(friendContentPanel, friendList));
 
-                @Override
-                public void windowClosing(WindowEvent e) {
-
-                }
-
-                @Override
-                public void windowClosed(WindowEvent e) {
-
-                }
-
-                @Override
-                public void windowIconified(WindowEvent e) {
-
-                }
-
-                @Override
-                public void windowDeiconified(WindowEvent e) {
-
-                }
-
-                @Override
-                public void windowActivated(WindowEvent e) {
-
-                }
-
-                @Override
-                public void windowDeactivated(WindowEvent e) {
-                    if (addFriendFrame.isDoneBtnClicked()) {
-                        Friend friend = addFriendFrame.getFriendInfo();
-                        if(friendList.searchFriend(friend.getName()) == null){
-                            System.out.println("Name Conflict");
-                            return;
-                        }
-                        friendList.addFriend(friend);
-                        friendContentPanel.resetFriendListPanel(friendList);
-
-                        validate();
-                    }
-                }
-            });
-        });
-
-        settingBtnPannel.getDeleteBtn().addActionListener(e -> {
-            System.out.println("deleteBtn is clicked");
-            int numFriendInfoPanel = friendContentPanel.getFriendListPanel().getNumFriendInfoPanel();
-            FriendInfoPanel friendInfoPanel;
-
-            for(int i = 0; i < numFriendInfoPanel; i++) {
-                friendInfoPanel = friendContentPanel.getFriendListPanel().getFriendInfoPanel(i);
-                if(friendInfoPanel.isChecked()) {
-                    friendList.deleteFriend(i);
-                    break;
-                }
-            }
-            friendContentPanel.resetFriendListPanel(friendList);
-            validate();
-        });
-
-        settingBtnPannel.getModifyBtn().addActionListener(e -> {
-            System.out.println("modifyBtn is clicked");
-            int numFriendInfoPanel = friendContentPanel.getFriendListPanel().getNumFriendInfoPanel();
-            FriendInfoPanel friendInfoPanel;
-
-            for(int i = 0; i < numFriendInfoPanel; i++) {
-                friendInfoPanel = friendContentPanel.getFriendListPanel().getFriendInfoPanel(i);
-                if (friendInfoPanel.isChecked()) {
-                    friendList.modifyFriend(friendList.getFriend(i), friendInfoPanel.getFriend());
-                    break;
-                }
-            }
-            friendContentPanel.resetFriendListPanel(friendList);
-            validate();
-        });
-
-        settingBtnPannel.getSaveFileBtn().addActionListener(e -> {
-            System.out.println("saveFileBtn is clicked");
-            friendListFile.writeFriendFile(filename, friendList);
-        });
+        settingBtnPannel.getSaveFileBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBtnPannel.getSaveFileBtn().addActionListener(e -> friendListFile.writeFriendFile(filename, friendList));
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();
         setVisible(true);
     }
-
 }

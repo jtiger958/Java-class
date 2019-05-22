@@ -1,14 +1,14 @@
-package aiel.friendlist.Layout.FriendListFrame;
+package aiel.friendlist.Layout.FriendListFrame.ButtonPanel;
 
 import javax.swing.*;
 import java.awt.*;
 
-class SettingBtnPannel extends JPanel {
+public class SettingBanPanel extends JPanel {
     private JButton addBtn = new JButton("Add");
     private JButton deleteBtn = new JButton("Delete");
     private JButton modifyBtn= new JButton("Modify");
     private JButton saveFileBtn = new JButton("Save File");
-    SettingBtnPannel(){
+    public SettingBanPanel(){
         setLayout(new GridLayout(4, 1));
         add(addBtn);
         add(deleteBtn);
@@ -16,19 +16,19 @@ class SettingBtnPannel extends JPanel {
         add(saveFileBtn);
     }
 
-    JButton getAddBtn() {
+    public JButton getAddBtn() {
         return addBtn;
     }
 
-    JButton getDeleteBtn() {
+    public JButton getDeleteBtn() {
         return deleteBtn;
     }
 
-    JButton getModifyBtn() {
+    public JButton getModifyBtn() {
         return modifyBtn;
     }
 
-    JButton getSaveFileBtn() {
+    public JButton getSaveFileBtn() {
         return saveFileBtn;
     }
 }

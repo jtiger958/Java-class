@@ -1,4 +1,4 @@
-package aiel.friendlist.Layout.FriendListFrame;
+package aiel.friendlist.Layout.FriendListFrame.ContentPanel;
 
 import aiel.friendlist.DataUtil.Friend;
 import javax.swing.*;
@@ -13,7 +13,6 @@ public class FriendInfoPanel extends JPanel {
     private JTextField email;
     private JLabel profilePicture;
     private JCheckBox checkbox;
-    private boolean isChecked;
 
     public FriendInfoPanel(Friend friend){
         checkbox = new JCheckBox();
@@ -22,7 +21,6 @@ public class FriendInfoPanel extends JPanel {
         phoneNumber = new JTextField(friend.getPhoneNumber());
         email = new JTextField(friend.getEmail());
         profilePicture = new JLabel(friend.getProfilePicture());
-        isChecked = false;
 
         setLayout(new GridLayout(1, 6));
         add(checkbox);
@@ -32,21 +30,14 @@ public class FriendInfoPanel extends JPanel {
         add(email);
         add(profilePicture);
 
-        checkbox.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                isChecked = !isChecked;
-            }
-        });
     }
 
     public Friend getFriend(){
-        Friend friend = new Friend(name.getText(), Integer.parseInt(group.getText()),
+        return new Friend(name.getText(), Integer.parseInt(group.getText()),
                 phoneNumber.getText(), email.getText(), profilePicture.getText());
-        return friend;
     }
 
     public boolean isChecked(){
-        return isChecked;
+        return checkbox.isSelected();
     }
 }

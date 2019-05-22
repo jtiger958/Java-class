@@ -1,14 +1,15 @@
-package aiel.friendlist.Layout.FriendListFrame;
+package aiel.friendlist.Layout.FriendListFrame.ContentPanel;
 
 import aiel.friendlist.DataUtil.FriendList;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
 
-class FriendListPanel extends JPanel {
+public class FriendListPanel extends JPanel {
     private ArrayList<FriendInfoPanel> friendInfoPanels;
     private int numFriendInfoPanel;
-    FriendListPanel(FriendList friendList){
+    public FriendListPanel(FriendList friendList){
         numFriendInfoPanel = friendList.numFriends();
         friendInfoPanels = new ArrayList<>();
 
@@ -19,11 +20,11 @@ class FriendListPanel extends JPanel {
         }
     }
 
-    FriendInfoPanel getFriendInfoPanel(int i){
+    public FriendInfoPanel getFriendInfoPanel(int i){
         return friendInfoPanels.get(i);
     }
 
-    int getNumFriendInfoPanel(){
+    public int getNumFriendInfoPanel(){
         return numFriendInfoPanel;
     }
 }

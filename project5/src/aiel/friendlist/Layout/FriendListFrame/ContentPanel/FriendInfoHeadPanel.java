@@ -1,9 +1,9 @@
-package aiel.friendlist.Layout.FriendListFrame;
+package aiel.friendlist.Layout.FriendListFrame.ContentPanel;
 
 import java.awt.*;
 
-public class FriendInfoHeadPanel extends Panel {
-    public FriendInfoHeadPanel(){
+class FriendInfoHeadPanel extends Panel {
+    FriendInfoHeadPanel(){
         setLayout(new GridLayout(1, 6));
         add(new Label("checkbox"));
         add(new Label("Name"));

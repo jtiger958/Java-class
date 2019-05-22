@@ -1,4 +1,4 @@
-package aiel.friendlist.Layout.AddFriendList;
+package aiel.friendlist.Layout.AddFriendList.ContentPanel;
 
 import aiel.friendlist.DataUtil.Friend;
 import javax.swing.*;
@@ -29,8 +29,7 @@ public class AddFriendInfoPanel extends JPanel {
 
     }
     public Friend getFriendInfo(){
-        Friend friend = new Friend(name.getText(), Integer.parseInt(group.getText()),
+        return new Friend(name.getText(), Integer.parseInt(group.getText()),
                 phoneNumber.getText(), email.getText(), profilePicture.getText());
-        return friend;
     }
 }
