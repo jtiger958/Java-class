@@ -3,8 +3,6 @@ package aiel.friendlist.Layout.FriendListFrame.ContentPanel;
 import aiel.friendlist.DataUtil.Friend;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class FriendInfoPanel extends JPanel {
     private JLabel name;
@@ -14,7 +12,7 @@ public class FriendInfoPanel extends JPanel {
     private JLabel profilePicture;
     private JCheckBox checkbox;
 
-    public FriendInfoPanel(Friend friend){
+    FriendInfoPanel(Friend friend){
         checkbox = new JCheckBox();
         name = new JLabel(friend.getName());
         group = new JTextField(String.valueOf(friend.getGroup()));

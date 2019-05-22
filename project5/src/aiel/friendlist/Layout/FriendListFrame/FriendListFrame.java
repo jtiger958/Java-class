@@ -19,23 +19,23 @@ public class FriendListFrame extends JFrame {
         FriendListFile friendListFile  = new FriendListFile();
         FriendList friendList = friendListFile.readFileToList(filename);
         FriendContentPanel friendContentPanel = new FriendContentPanel(friendList);
-        SettingBanPanel settingBtnPannel = new SettingBanPanel();
+        SettingBanPanel settingBanPanel = new SettingBanPanel();
 
         add(friendContentPanel, BorderLayout.CENTER);
-        add(settingBtnPannel, BorderLayout.EAST);
+        add(settingBanPanel, BorderLayout.EAST);
 
 
-        settingBtnPannel.getAddBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBtnPannel.getAddBtn().addActionListener(new AddBtnListener(friendContentPanel, friendList));
+        settingBanPanel.getAddBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBanPanel.getAddBtn().addActionListener(new AddBtnListener(friendContentPanel, friendList));
 
-        settingBtnPannel.getDeleteBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBtnPannel.getDeleteBtn().addActionListener(new DeleteBtnActionListener(friendContentPanel, friendList));
+        settingBanPanel.getDeleteBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBanPanel.getDeleteBtn().addActionListener(new DeleteBtnActionListener(friendContentPanel, friendList));
 
-        settingBtnPannel.getModifyBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBtnPannel.getModifyBtn().addActionListener(new ModifyBtnListener(friendContentPanel, friendList));
+        settingBanPanel.getModifyBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBanPanel.getModifyBtn().addActionListener(new ModifyBtnListener(friendContentPanel, friendList));
 
-        settingBtnPannel.getSaveFileBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBtnPannel.getSaveFileBtn().addActionListener(e -> friendListFile.writeFriendFile(filename, friendList));
+        settingBanPanel.getSaveFileBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBanPanel.getSaveFileBtn().addActionListener(e -> friendListFile.writeFriendFile(filename, friendList));
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         pack();

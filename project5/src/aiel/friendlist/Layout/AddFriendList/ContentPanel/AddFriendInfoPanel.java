@@ -3,9 +3,6 @@ package aiel.friendlist.Layout.AddFriendList.ContentPanel;
 import aiel.friendlist.DataUtil.Friend;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-
 public class AddFriendInfoPanel extends JPanel {
     private JTextField name;
     private JTextField group;
@@ -13,7 +10,7 @@ public class AddFriendInfoPanel extends JPanel {
     private JTextField email;
     private JTextField profilePicture;
 
-    public AddFriendInfoPanel(){
+    AddFriendInfoPanel(){
         name = new JTextField();
         group = new JTextField();
         phoneNumber = new JTextField();
