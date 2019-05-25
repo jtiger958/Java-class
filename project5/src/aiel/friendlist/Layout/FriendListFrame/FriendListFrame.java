@@ -39,7 +39,7 @@ public class FriendListFrame extends JFrame {
         settingBanPanel.getSaveFileBtn().addActionListener(e -> friendListFile.writeFriendFile(filename, friendList));
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        pack();
+        setSize(750, 300);
         setVisible(true);
     }
 }
