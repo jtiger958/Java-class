@@ -6,7 +6,7 @@ import aiel.friendlist.ActionListener.ModifyBtnListener;
 import aiel.friendlist.ActionListener.ShowBtnNameActionListener;
 import aiel.friendlist.DataUtil.FriendList;
 import aiel.friendlist.DataUtil.FriendListFile;
-import aiel.friendlist.Layout.FriendListFrame.ButtonPanel.SettingBanPanel;
+import aiel.friendlist.Layout.FriendListFrame.ButtonPanel.SettingBtnPanel;
 import aiel.friendlist.Layout.FriendListFrame.ContentPanel.FriendContentPanel;
 
 import javax.swing.*;
@@ -20,23 +20,23 @@ public class FriendListFrame extends JFrame {
         FriendListFile friendListFile  = new FriendListFile();
         FriendList friendList = friendListFile.readFileToList(filename);
         FriendContentPanel friendContentPanel = new FriendContentPanel(friendList);
-        SettingBanPanel settingBanPanel = new SettingBanPanel();
+        SettingBtnPanel settingBtnPanel = new SettingBtnPanel();
 
         add(friendContentPanel, BorderLayout.CENTER);
-        add(settingBanPanel, BorderLayout.EAST);
+        add(settingBtnPanel, BorderLayout.EAST);
 
 
-        settingBanPanel.getAddBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBanPanel.getAddBtn().addActionListener(new AddBtnListener(friendContentPanel, friendList));
+        settingBtnPanel.getAddBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBtnPanel.getAddBtn().addActionListener(new AddBtnListener(friendContentPanel, friendList));
 
-        settingBanPanel.getDeleteBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBanPanel.getDeleteBtn().addActionListener(new DeleteBtnActionListener(friendContentPanel, friendList));
+        settingBtnPanel.getDeleteBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBtnPanel.getDeleteBtn().addActionListener(new DeleteBtnActionListener(friendContentPanel, friendList));
 
-        settingBanPanel.getModifyBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBanPanel.getModifyBtn().addActionListener(new ModifyBtnListener(friendContentPanel, friendList));
+        settingBtnPanel.getModifyBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBtnPanel.getModifyBtn().addActionListener(new ModifyBtnListener(friendContentPanel, friendList));
 
-        settingBanPanel.getSaveFileBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBanPanel.getSaveFileBtn().addActionListener(e -> friendListFile.writeFriendFile(filename, friendList));
+        settingBtnPanel.getSaveFileBtn().addActionListener(new ShowBtnNameActionListener());
+        settingBtnPanel.getSaveFileBtn().addActionListener(e -> friendListFile.writeFriendFile(filename, friendList));
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(750, 300);

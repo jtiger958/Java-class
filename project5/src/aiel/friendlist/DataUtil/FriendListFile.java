@@ -25,7 +25,7 @@ public class FriendListFile{
                     friendList.addFriend(userInfo[0], Integer.parseInt(userInfo[1]), userInfo[2], userInfo[3], "");
                 }
             }
-        } catch (NameConflictExeption e) {
+        } catch (NameConflictException e) {
             System.out.println("Name Conflict");
         } catch (IOException e){
             System.out.println("Unknown File");
@@ -44,7 +44,7 @@ public class FriendListFile{
         }
     }
 
-    private boolean isRightInformation(String line) throws NameConflictExeption {
+    private boolean isRightInformation(String line) throws NameConflictException {
         int numOfFriend = friendList.numFriends();
         Friend tempFriend;
         String tempName;
@@ -72,7 +72,7 @@ public class FriendListFile{
             tempFriend = friendList.getFriend(i);
             tempName = tempFriend.getName();
             if (tempName.equals(userInfo[0])) {
-                throw new NameConflictExeption();
+                throw new NameConflictException();
             }
         }
 

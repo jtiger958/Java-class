@@ -3,12 +3,12 @@ package aiel.friendlist.Layout.FriendListFrame.ButtonPanel;
 import javax.swing.*;
 import java.awt.*;
 
-public class SettingBanPanel extends JPanel {
+public class SettingBtnPanel extends JPanel {
     private JButton addBtn = new JButton("Add");
     private JButton deleteBtn = new JButton("Delete");
     private JButton modifyBtn= new JButton("Modify");
     private JButton saveFileBtn = new JButton("Save File");
-    public SettingBanPanel(){
+    public SettingBtnPanel(){
         setLayout(new GridLayout(4, 1));
         add(addBtn);
         add(deleteBtn);
