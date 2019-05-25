@@ -7,11 +7,11 @@ import aiel.friendlist.Layout.FriendListFrame.ContentPanel.FriendInfoPanel;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ModifyBtnListener implements ActionListener {
+public class ModifyBtnActionListener implements ActionListener {
     private FriendContentPanel friendContentPanel;
     private FriendList friendList;
 
-    public ModifyBtnListener(FriendContentPanel friendContentPanel, FriendList friendList){
+    public ModifyBtnActionListener(FriendContentPanel friendContentPanel, FriendList friendList){
         this.friendContentPanel = friendContentPanel;
         this.friendList = friendList;
     }

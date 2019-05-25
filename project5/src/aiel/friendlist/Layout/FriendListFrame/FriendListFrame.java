@@ -1,8 +1,8 @@
 package aiel.friendlist.Layout.FriendListFrame;
 
-import aiel.friendlist.ActionListener.AddBtnListener;
+import aiel.friendlist.ActionListener.AddBtnActionListener;
 import aiel.friendlist.ActionListener.DeleteBtnActionListener;
-import aiel.friendlist.ActionListener.ModifyBtnListener;
+import aiel.friendlist.ActionListener.ModifyBtnActionListener;
 import aiel.friendlist.ActionListener.ShowBtnNameActionListener;
 import aiel.friendlist.DataUtil.FriendList;
 import aiel.friendlist.DataUtil.FriendListFile;
@@ -27,13 +27,13 @@ public class FriendListFrame extends JFrame {
 
 
         settingBtnPanel.getAddBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBtnPanel.getAddBtn().addActionListener(new AddBtnListener(friendContentPanel, friendList));
+        settingBtnPanel.getAddBtn().addActionListener(new AddBtnActionListener(friendContentPanel, friendList));
 
         settingBtnPanel.getDeleteBtn().addActionListener(new ShowBtnNameActionListener());
         settingBtnPanel.getDeleteBtn().addActionListener(new DeleteBtnActionListener(friendContentPanel, friendList));
 
         settingBtnPanel.getModifyBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBtnPanel.getModifyBtn().addActionListener(new ModifyBtnListener(friendContentPanel, friendList));
+        settingBtnPanel.getModifyBtn().addActionListener(new ModifyBtnActionListener(friendContentPanel, friendList));
 
         settingBtnPanel.getSaveFileBtn().addActionListener(new ShowBtnNameActionListener());
         settingBtnPanel.getSaveFileBtn().addActionListener(e -> friendListFile.writeFriendFile(filename, friendList));
