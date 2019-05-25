@@ -1,4 +1,4 @@
-import aiel.friendlist.Layout.AddFriendList.AddFriendFrame;
+import aiel.friendlist.Layout.AddFriendListFrame.AddFriendFrame;
 import aiel.friendlist.Layout.FriendListFrame.FriendListFrame;
 
 public class AutoTest {

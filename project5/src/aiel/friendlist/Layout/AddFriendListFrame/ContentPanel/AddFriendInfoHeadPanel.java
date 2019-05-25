@@ -1,4 +1,4 @@
-package aiel.friendlist.Layout.AddFriendList.ContentPanel;
+package aiel.friendlist.Layout.AddFriendListFrame.ContentPanel;
 
 import java.awt.*;
 

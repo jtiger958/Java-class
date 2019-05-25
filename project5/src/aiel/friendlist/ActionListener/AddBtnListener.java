@@ -1,7 +1,7 @@
 package aiel.friendlist.ActionListener;
 
 import aiel.friendlist.DataUtil.FriendList;
-import aiel.friendlist.Layout.AddFriendList.AddFriendFrame;
+import aiel.friendlist.Layout.AddFriendListFrame.AddFriendFrame;
 import aiel.friendlist.Layout.FriendListFrame.ContentPanel.FriendContentPanel;
 
 import java.awt.event.ActionEvent;

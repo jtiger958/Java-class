@@ -2,7 +2,7 @@ package aiel.friendlist.ActionListener;
 
 import aiel.friendlist.DataUtil.Friend;
 import aiel.friendlist.DataUtil.FriendList;
-import aiel.friendlist.Layout.AddFriendList.ContentPanel.AddFriendContentPanel;
+import aiel.friendlist.Layout.AddFriendListFrame.ContentPanel.AddFriendContentPanel;
 import aiel.friendlist.Layout.FriendListFrame.ContentPanel.FriendContentPanel;
 
 import javax.swing.*;

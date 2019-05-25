@@ -6,11 +6,16 @@ import java.awt.*;
 
 public class FriendContentPanel extends Panel {
     private FriendListPanel friendListPanel;
+    private Container container;
     public FriendContentPanel(FriendList friendList){
         friendListPanel =  new FriendListPanel(friendList);
-        setLayout(new BorderLayout());
-        add(new FriendInfoHeadPanel(), BorderLayout.NORTH);
-        add(friendListPanel, BorderLayout.CENTER);
+        container = new Container();
+        setLayout(new FlowLayout());
+        container.setLayout(new BorderLayout());
+
+        container.add(new FriendInfoHeadPanel(), BorderLayout.NORTH);
+        container.add(friendListPanel, BorderLayout.CENTER);
+        add(container);
     }
 
     public FriendListPanel getFriendListPanel(){
@@ -18,8 +23,8 @@ public class FriendContentPanel extends Panel {
     }
 
     public void resetFriendListPanel(FriendList friendList){
-        remove(friendListPanel);
+        container.remove(friendListPanel);
         friendListPanel =  new FriendListPanel(friendList);
-        add(friendListPanel, BorderLayout.CENTER);
+        container.add(friendListPanel, BorderLayout.CENTER);
     }
 }

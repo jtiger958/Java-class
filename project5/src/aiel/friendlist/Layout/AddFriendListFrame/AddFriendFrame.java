@@ -1,10 +1,10 @@
-package aiel.friendlist.Layout.AddFriendList;
+package aiel.friendlist.Layout.AddFriendListFrame;
 
 import aiel.friendlist.ActionListener.DoneBtnActionListener;
 import aiel.friendlist.ActionListener.ShowBtnNameActionListener;
 import aiel.friendlist.DataUtil.FriendList;
-import aiel.friendlist.Layout.AddFriendList.ButtonPanel.SettingBtnPanel;
-import aiel.friendlist.Layout.AddFriendList.ContentPanel.AddFriendContentPanel;
+import aiel.friendlist.Layout.AddFriendListFrame.Button.SettingBtn;
+import aiel.friendlist.Layout.AddFriendListFrame.ContentPanel.AddFriendContentPanel;
 import aiel.friendlist.Layout.FriendListFrame.ContentPanel.FriendContentPanel;
 
 import javax.swing.*;
@@ -15,7 +15,7 @@ public class AddFriendFrame extends JFrame {
     public AddFriendFrame(FriendContentPanel friendContentPanel, FriendList friendList){
         super("Add Friend");
         AddFriendContentPanel addFriendContentPanel = new AddFriendContentPanel();
-        SettingBtnPanel settingBtnPanel = new SettingBtnPanel();
+        SettingBtn settingBtnPanel = new SettingBtn();
 
         setLayout(new BorderLayout());
         add(addFriendContentPanel, BorderLayout.CENTER);
