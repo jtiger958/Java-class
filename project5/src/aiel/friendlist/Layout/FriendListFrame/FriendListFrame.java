@@ -14,6 +14,7 @@ import java.awt.*;
 
 public class FriendListFrame extends JFrame {
     public FriendListFrame(String filename){
+        super("Friend List");
         setLayout(new BorderLayout());
 
         FriendListFile friendListFile  = new FriendListFile();

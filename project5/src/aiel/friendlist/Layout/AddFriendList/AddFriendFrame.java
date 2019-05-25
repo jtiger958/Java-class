@@ -13,6 +13,7 @@ import java.awt.*;
 public class AddFriendFrame extends JFrame {
 
     public AddFriendFrame(FriendContentPanel friendContentPanel, FriendList friendList){
+        super("Add Friend");
         AddFriendContentPanel addFriendContentPanel = new AddFriendContentPanel();
         SettingBtnPanel settingBtnPanel = new SettingBtnPanel();
 
