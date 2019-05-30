@@ -39,10 +39,6 @@ public class Friend {
         return profilePicture;
     }
 
-    void print(){
-        System.out.println(this.toString());
-    }
-
     @Override
     public String toString() {
         return name + ":" + group + ":" + phoneNumber + ":" + email + ":" + profilePicture;

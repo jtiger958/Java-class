@@ -49,10 +49,15 @@ public class AddBtnActionListener implements ActionListener {
             @Override
             public void windowDeactivated(WindowEvent e) {
                 friend = addFriendFrame.getFriend();
-                if(friend != null){
-                    friendList.addFriend(friend);
-                    friendContentPanel.addFriendListPanel(friend);
-                }
+                if (addFriendFrame.isDoneClicked())
+                    if(friend != null){
+                        if (friend.getEmail().contains("@")) {
+                            friendList.addFriend(friend);
+                            friendContentPanel.addFriendListPanel(friend);
+                        }
+                        else
+                            System.out.println("Illegal email format");
+                    }
             }
         });
     }
