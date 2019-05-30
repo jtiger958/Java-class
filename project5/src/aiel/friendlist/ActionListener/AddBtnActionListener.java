@@ -44,7 +44,6 @@ public class AddBtnActionListener implements ActionListener {
 
             @Override
             public void windowActivated(WindowEvent e) {
-
             }
 
             @Override
