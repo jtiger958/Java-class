@@ -1,5 +1,7 @@
 package aiel.friendlist.Layout.AddFriendListFrame.ContentPanel;
 
+import aiel.friendlist.DataUtil.Friend;
+
 import javax.swing.*;
 import java.awt.*;
 
@@ -14,5 +16,8 @@ public class AddFriendContentPanel extends JPanel {
 
     public AddFriendInfoPanel getFriendAddInfoPanel() {
         return addFriendInfoPanel;
+    }
+    public Friend getFriendInfo(){
+        return addFriendInfoPanel.getFriendInfo();
     }
 }

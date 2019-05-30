@@ -15,6 +15,10 @@ public class Friend {
         this.profilePicture = profilePicture;
     }
 
+    public Friend(Friend friend) {
+        this(friend.getName(), friend.getGroup(), friend.getPhoneNumber(), friend.getEmail(), friend.profilePicture);
+    }
+
     public String getName() {
         return name;
     }

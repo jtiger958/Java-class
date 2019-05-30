@@ -2,19 +2,19 @@ package aiel.friendlist.Layout.AddFriendListFrame;
 
 import aiel.friendlist.ActionListener.DoneBtnActionListener;
 import aiel.friendlist.ActionListener.ShowBtnNameActionListener;
-import aiel.friendlist.DataUtil.FriendList;
+import aiel.friendlist.DataUtil.Friend;
 import aiel.friendlist.Layout.AddFriendListFrame.Button.SettingBtn;
 import aiel.friendlist.Layout.AddFriendListFrame.ContentPanel.AddFriendContentPanel;
-import aiel.friendlist.Layout.FriendListFrame.ContentPanel.FriendContentPanel;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class AddFriendFrame extends JFrame {
-
-    public AddFriendFrame(FriendContentPanel friendContentPanel, FriendList friendList){
+    private boolean isDoneClicked = false;
+    private AddFriendContentPanel addFriendContentPanel;
+    public AddFriendFrame(){
         super("Add Friend");
-        AddFriendContentPanel addFriendContentPanel = new AddFriendContentPanel();
+        addFriendContentPanel = new AddFriendContentPanel();
         SettingBtn settingBtnPanel = new SettingBtn();
 
         setLayout(new BorderLayout());
@@ -22,10 +22,22 @@ public class AddFriendFrame extends JFrame {
         add(settingBtnPanel, BorderLayout.EAST);
 
         settingBtnPanel.getDoneBtn().addActionListener(new ShowBtnNameActionListener());
-        settingBtnPanel.getDoneBtn().addActionListener(new DoneBtnActionListener(addFriendContentPanel, friendContentPanel, friendList));
+        settingBtnPanel.getDoneBtn().addActionListener(new DoneBtnActionListener());
+        settingBtnPanel.getDoneBtn().addActionListener(e -> isDoneClicked = !isDoneClicked);
 
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         pack();
         setVisible(true);
+    }
+
+    public boolean isDoneClicked() {
+        return isDoneClicked;
+    }
+
+    public Friend getFriend() {
+        if (isDoneClicked)
+            return new Friend(addFriendContentPanel.getFriendInfo());
+        else
+            return null;
     }
 }

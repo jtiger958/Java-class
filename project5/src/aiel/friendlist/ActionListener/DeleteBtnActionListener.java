@@ -21,12 +21,11 @@ public class DeleteBtnActionListener implements ActionListener {
 
         for(int i = 0; i < numFriendInfoPanel; i++) {
             friendInfoPanel = friendContentPanel.getFriendListPanel().getFriendInfoPanel(i);
-            if(friendInfoPanel.isChecked()) {
+            if (friendInfoPanel.isChecked()) {
                 friendList.deleteFriend(i);
+                friendContentPanel.deleteFriendListPanel(friendInfoPanel.getIndex());
                 break;
             }
         }
-        friendContentPanel.resetFriendListPanel(friendList);
-        friendContentPanel.validate();
     }
 }

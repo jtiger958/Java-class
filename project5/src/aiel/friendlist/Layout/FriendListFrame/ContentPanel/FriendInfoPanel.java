@@ -5,6 +5,7 @@ import javax.swing.*;
 import java.awt.*;
 
 public class FriendInfoPanel extends JPanel {
+    private int index;
     private JLabel name;
     private JTextField group;
     private JTextField phoneNumber;
@@ -12,7 +13,8 @@ public class FriendInfoPanel extends JPanel {
     private JLabel profilePicture;
     private JCheckBox checkbox;
 
-    FriendInfoPanel(Friend friend){
+    FriendInfoPanel(Friend friend, int index){
+        this.index = index;
         checkbox = new JCheckBox();
         name = new JLabel(friend.getName());
         group = new JTextField(String.valueOf(friend.getGroup()));
@@ -37,5 +39,13 @@ public class FriendInfoPanel extends JPanel {
 
     public boolean isChecked(){
         return checkbox.isSelected();
+    }
+
+    public int getIndex(){
+        return this.index;
+    }
+
+    public void toggleCheck() {
+        checkbox.setSelected(!checkbox.isSelected());
     }
 }

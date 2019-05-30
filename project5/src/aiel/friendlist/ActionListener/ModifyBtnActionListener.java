@@ -25,10 +25,9 @@ public class ModifyBtnActionListener implements ActionListener {
             friendInfoPanel = friendContentPanel.getFriendListPanel().getFriendInfoPanel(i);
             if (friendInfoPanel.isChecked()) {
                 friendList.modifyFriend(friendList.getFriend(i), friendInfoPanel.getFriend());
+                friendInfoPanel.toggleCheck();
                 break;
             }
         }
-        friendContentPanel.resetFriendListPanel(friendList);
-        friendContentPanel.validate();
     }
 }
