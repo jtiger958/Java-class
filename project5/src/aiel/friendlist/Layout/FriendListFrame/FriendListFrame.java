@@ -40,6 +40,7 @@ public class FriendListFrame extends JFrame {
 
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setSize(750, 300);
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 }

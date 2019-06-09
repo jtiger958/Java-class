@@ -27,6 +27,7 @@ public class AddFriendFrame extends JFrame {
 
         setDefaultCloseOperation(DISPOSE_ON_CLOSE);
         pack();
+        setLocationRelativeTo(null);
         setVisible(true);
     }
 

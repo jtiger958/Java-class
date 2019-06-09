@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c2fa6b4-1480-4931-8cf1-caf6ddf155b8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AutoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/AutoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/friendlist-norm.data" beforeDir="false" afterPath="$PROJECT_DIR$/friendlist-norm.data" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aiel/friendlist/Layout/AddFriendListFrame/AddFriendFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aiel/friendlist/Layout/AddFriendListFrame/AddFriendFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/aiel/friendlist/Layout/FriendListFrame/FriendListFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/aiel/friendlist/Layout/FriendListFrame/FriendListFrame.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -17,95 +17,41 @@
   <component name="FileEditorManager">
     <leaf>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/DataUtil/FriendList.java">
+        <entry file="file://$PROJECT_DIR$/src/AutoTest.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="52" selection-end-column="1" />
+            <state relative-caret-position="133">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
+              <folding>
+                <element signature="e#196#197#0" expanded="true" />
+                <element signature="e#255#256#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/DataUtil/FriendListFile.java">
+        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/Layout/AddFriendListFrame/AddFriendFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="834">
-              <caret line="87" lean-forward="true" selection-end-line="87" />
+            <state relative-caret-position="359">
+              <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="29" selection-end-column="36" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/DataUtil/NameConflictException.java">
+        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/Layout/FriendListFrame/FriendListFrame.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="7" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/DataUtil/ObjectList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="31" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/ActionListener/AddBtnActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="63" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/ActionListener/DeleteBtnActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="30" selection-end-column="1" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/ActionListener/DoneBtnActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/ActionListener/ModifyBtnActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="33" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/ActionListener/ShowBtnNameActionListener.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret selection-end-line="12" selection-end-column="1" />
+            <state relative-caret-position="378">
+              <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AutoTest.java">
+        <entry file="file://$PROJECT_DIR$/friendlist-norm.data">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="133">
-              <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-              <folding>
-                <element signature="e#196#197#0" expanded="true" />
-                <element signature="e#255#256#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="76">
+              <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
             </state>
           </provider>
         </entry>
@@ -118,8 +64,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/aiel/friendlist/Layout/AddFriendListFrame/AddFriendFrame.java" />
         <option value="$PROJECT_DIR$/src/AutoTest.java" />
+        <option value="$PROJECT_DIR$/src/aiel/friendlist/Layout/AddFriendListFrame/AddFriendFrame.java" />
+        <option value="$PROJECT_DIR$/src/aiel/friendlist/Layout/FriendListFrame/FriendListFrame.java" />
+        <option value="$PROJECT_DIR$/friendlist-norm.data" />
       </list>
     </option>
   </component>
@@ -168,6 +116,22 @@
               <item name="friendlist" type="462c0819:PsiDirectoryNode" />
               <item name="Layout" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="project5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="friendlist" type="462c0819:PsiDirectoryNode" />
+              <item name="Layout" type="462c0819:PsiDirectoryNode" />
+              <item name="AddFriendListFrame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="project5" type="b2602c69:ProjectViewProjectNode" />
+              <item name="project5" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="friendlist" type="462c0819:PsiDirectoryNode" />
+              <item name="Layout" type="462c0819:PsiDirectoryNode" />
+              <item name="FriendListFrame" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -176,7 +140,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560064060080" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1560065742858" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -190,6 +154,20 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="AutoTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="AutoTest" />
+      <module name="project5" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.AutoTest" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -201,6 +179,14 @@
       <option name="presentableId" value="Default" />
       <updated>1560059336878</updated>
     </task>
+    <task id="LOCAL-00001" summary="edit AutoTest">
+      <created>1560064215184</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1560064215184</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -212,14 +198,15 @@
       <window_info id="UI Designer" />
       <window_info id="Capture Tool" />
       <window_info id="Favorites" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Version Control" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.329718" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -234,14 +221,11 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="edit AutoTest" />
+    <option name="LAST_COMMIT_MESSAGE" value="edit AutoTest" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/Layout/FriendListFrame/FriendListFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="44" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/Layout/FriendListFrame/ButtonPanel/SettingBtnPanel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -274,13 +258,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state>
           <caret selection-end-line="50" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/Layout/AddFriendListFrame/AddFriendFrame.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="43" />
         </state>
       </provider>
     </entry>
@@ -385,11 +362,32 @@
     <entry file="file://$PROJECT_DIR$/src/AutoTest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
           <folding>
             <element signature="e#196#197#0" expanded="true" />
             <element signature="e#255#256#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/Layout/AddFriendListFrame/AddFriendFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="359">
+          <caret line="28" column="15" lean-forward="true" selection-start-line="28" selection-start-column="15" selection-end-line="29" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/aiel/friendlist/Layout/FriendListFrame/FriendListFrame.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="41" column="26" selection-start-line="41" selection-start-column="26" selection-end-line="41" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/friendlist-norm.data">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="76">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
         </state>
       </provider>
     </entry>
